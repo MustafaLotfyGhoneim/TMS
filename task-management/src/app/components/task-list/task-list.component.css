@@ -1,0 +1,94 @@
+/* تصميم الجدول */
+.task-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    font-size: 18px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  /* تصميم الرؤوس */
+  .task-table th {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+  }
+  
+  /* تصميم الصفوف */
+  .task-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* تمييز الصفوف بالتناوب */
+  .task-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* أنماط الحالة */
+  .status-todo {
+    color: red;
+    font-weight: bold;
+  }
+  .status-inprogress {
+    color: orange;
+    font-weight: bold;
+  }
+  .status-done {
+    color: green;
+    font-weight: bold;
+  }
+  
+  /* زر الإضافة */
+  .add-task-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .add-task-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  
+  .add-task-btn:hover {
+    background-color: #218838;
+  }
+  
+  /* زر التعديل */
+  .edit-btn {
+    color: #007bff;
+    text-decoration: none;
+    margin-right: 10px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .edit-btn:hover {
+    color: #0056b3;
+  }
+  
+  /* زر الحذف */
+  .delete-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  
+  .delete-btn:hover {
+    background-color: darkred;
+  }
+  

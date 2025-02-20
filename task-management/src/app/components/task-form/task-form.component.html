@@ -1,0 +1,38 @@
+<div class="task-form-container">
+    <h2>{{ isEditMode ? '✏️ تعديل المهمة' : '➕ إضافة مهمة جديدة' }}</h2>
+  
+    <form (submit)="saveTask()" class="task-form">
+      <!-- حقل العنوان -->
+      <div class="form-group">
+        <label for="title">📌 العنوان:</label>
+        <input id="title" type="text" [(ngModel)]="task.title" name="title" required class="form-control">
+      </div>
+  
+      <!-- حقل الحالة -->
+      <div class="form-group">
+        <label for="status">📋 الحالة:</label>
+        <select id="status" [(ngModel)]="task.status" name="status" class="form-control">
+          <option value="To Do">To Do</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Done">Done</option>
+        </select>
+      </div>
+  
+      <!-- حقل تاريخ الاستحقاق -->
+      <div class="form-group">
+        <label for="dueDate">📅 تاريخ الاستحقاق:</label>
+        <input id="dueDate" type="date" [(ngModel)]="task.dueDate" name="dueDate" required class="form-control">
+      </div>
+  
+      <!-- زر الحفظ -->
+      <button type="submit" class="submit-btn">
+        {{ isEditMode ? '💾 تحديث' : '✅ إضافة' }}
+      </button>
+    </form>
+  
+    <!-- زر العودة إلى القائمة -->
+    <div class="back-container">
+      <a routerLink="/tasks" class="back-btn">🔙 العودة إلى قائمة المهام</a>
+    </div>
+  </div>
+  

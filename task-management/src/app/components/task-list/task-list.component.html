@@ -1,0 +1,37 @@
+<h2 class="text-center">📋 قائمة المهام</h2>
+
+<table class="task-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>العنوان</th>
+      <th>الحالة</th>
+      <th>📅 تاريخ الاستحقاق</th>
+      <th>🛠️ التحكم</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let task of tasks; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ task.title }}</td>
+      <td>
+        <span [ngClass]="{
+          'status-todo': task.status === 'To Do',
+          'status-inprogress': task.status === 'In Progress',
+          'status-done': task.status === 'Done'
+        }">
+          {{ task.status }}
+        </span>
+      </td>
+      <td>{{ task.dueDate | date:'yyyy-MM-dd' }}</td>
+      <td>
+        <a [routerLink]="['/tasks/edit', task.id]" class="edit-btn">✏️ تعديل</a>
+        <button (click)="deleteTask(task.id!)" class="delete-btn">🗑️ حذف</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="add-task-container">
+  <a routerLink="/tasks/new" class="add-task-btn">➕ إضافة مهمة جديدة</a>
+</div>
